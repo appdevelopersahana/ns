@@ -590,11 +590,14 @@ select{
    display: none;
 }
 
-input .invalid {
-  background-color: #ffdddd;
+/* Mark input boxes that gets an error on validation: */
+.invalid {
+  background-color: #ffdddd !important;
 }
+
+/* Hide all steps by default: */
 .tab {
-  display:none;
+  display: none;
 }
 
 button {
@@ -616,49 +619,56 @@ button:hover {
 }
 
 /* Make circles that indicate the steps of the form: */
-/*.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
+.step {
+  height: 35px;
+  width: 35px;
   opacity: 0.5;
-}*/
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
 .stages {
-  width: 500px;
-  margin-top: 2px;
-  margin-bottom:30px;
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
+    width:700px;
+    margin-top: 0px;
+  margin-bottom:0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ #progressbar li{
+    list-style-type: none;
+    display: inline-flex;
+     margin-left: 120px;
+    padding-right: 10px;
 }
 
 .stages ul {
   list-style-type: none;
   margin-left: auto;
   margin-right:auto;
-  padding: 0;
-  display: flex;
+  padding:0;
+  display:flex;
 }
-li{
-margin-left:auto;margin-right:auto;}
-
-
 li.step {
   flex: 0 0 auto;  
   border-radius: 50%;
   background: green;  
   font-weight: bold;
-  padding: 8px 14px;
+  padding: 5px 8px;
   position: relative;
   z-index: 1;
+    align-items: center;
+    align-content: center;
 }
 
 li.pipe {  
   flex: 1;
-  height: 10px;  
+  height: 5px;  
   background: green;
   align-self: center;
   transform: scale(1.01, 1);
@@ -669,16 +679,14 @@ li.step.active ~ li.pipe,
 li.step.active ~ li.step {
   background: #f7f7f7;
 }
-
-
-.step.active {
-  opacity: 1;
+.bcontainer{
+   max-width:400px;
+	width:100%;
+	margin:auto auto;
+	position:relative;
+    padding: 25px;
 }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #4CAF50;
-}
 
 @media only screen and (max-width: 700px){
     .column{
