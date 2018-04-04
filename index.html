@@ -15,7 +15,7 @@
 <video autoplay muted loop id="myVideo">
   <source src="bgvideo.mp4" type="video/mp4">
 </video>
-    <ul id="progressbar" class="container2" style="">
+    <ul id="progressbar" class="ucontainer" >
     <li  class="active">Account Setup</li>
     <li >Packages</li>
     <li >Templates</li>
@@ -23,9 +23,11 @@
     
   </ul>
     <div class="stages container2">
+        
   <ul>
-    <li class="step"><i class="material-icons" style="color:white;">check</i></li>
-    <li class="pipe"></li>
+    <li class="step"><i class="material-icons" style="color:white;">check</i></li>   
+      <li class="pipe"></li>
+        
     <li class="step active"><i class="material-icons" style="color:white;">check</i></li>
     <li class="pipe"></li>
     <li class="step"><i class="material-icons" style="color:white;">check</i></li>
@@ -37,7 +39,7 @@
 </div>
     
 <div class="container tab" >  
-  <form id="contact" action="/action_page.php">
+  <form class="contact">
     <h3 style="text-align:center;">Quick Contact</h3>
     <h4 style="text-align:center;">Contact us today!</h4>
     <fieldset>
@@ -54,41 +56,45 @@
 </div>
  
 <div class="w3-row-padding w3-center w3-margin-top container1 tab">
+    <h2>Choose one package</h2>
 <div class="w3-third">
-  <div class="w3-card w3-container" style="min-height:460px">
+  <div class="w3-card w3-container popup" style="min-height:460px" onclick="silver();rotateYDIV();" id="silverPackage" style="transform: rotateY(360deg);">
+      <span class="popuptext" id="silverPopup" style="transform: rotateY(180deg);">You Choosen Silver plan.unclick on it to deselect.</span>
   <h3>SILVER</h3><br>
-  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img src="images/silver.jpg" width="30%"></i>
+  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img id="silverPackage" src="images/silver.jpg" width="30%"></i>
 <ul style="list-style-type: circle;">  
-<p><li>Lorem ipsum dolor sit amet</li></p>
-<p><li>Consectetur adipiscing elit</li></p>
-<p><li>Lorem ipsum dolor sit amet</li></p>
- <p><li>Consectetur adipiscing elit</li></p>
+<p><li id="silverPackage" >Lorem ipsum dolor sit amet</li></p>
+<p><li id="silverPackage" >Consectetur adipiscing elit</li></p>
+<p><li id="silverPackage" >Lorem ipsum dolor sit amet</li></p>
+ <p><li id="silverPackage" >Consectetur adipiscing elit</li></p>
 </ul>
   </div>
 </div>
 
 <div class="w3-third">
-  <div class="w3-card w3-container" style="min-height:460px">
+  <div class="w3-card w3-container popup" style="min-height:460px" onclick="gold();grotateYDIV();" id="goldPackage" style="transform: rotateY(360deg);">
+      <span class="popuptext" id="goldPopup" style="transform: rotateY(180deg);">You Choosen Gold plan.unclick on it to deselect.</span>
   <h3>GOLD</h3><br>
-  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img src="images/gold.jpg" width="30%"></i>
+  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img id="goldPackage" src="images/gold.jpg" width="30%"></i>
 <ul style="list-style-type: circle;">  
-<p><li>Lorem ipsum dolor sit amet</li></p>
-<p><li>Consectetur adipiscing elit</li></p>
-<p><li>Lorem ipsum dolor sit amet</li></p>
- <p><li>Consectetur adipiscing elit</li></p>
+<p><li id="goldPackage">Lorem ipsum dolor sit amet</li></p>
+<p><li id="goldPackage">Consectetur adipiscing elit</li></p>
+<p><li id="goldPackage">Lorem ipsum dolor sit amet</li></p>
+ <p><li id="goldPackage">Consectetur adipiscing elit</li></p>
 </ul>
   </div>
 </div>
 
 <div class="w3-third">
-  <div class="w3-card w3-container" style="min-height:460px">
+  <div class="w3-card w3-container popup" style="min-height:460px" onclick="platinum();protateYDIV();" id="platinumPackage" style="transform: rotateY(360deg);">
+      <span class="popuptext" id="platinumPopup" style="transform: rotateY(180deg);">You Choosen Platinum plan.unclick on it to deselect.</span>
   <h3>PLATINUM</h3><br>
-  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img src="images/platinum-level.png" width="30%"></i>
+  <i class="w3-margin-bottom w3-text-theme" style="font-size:120px"><img id="platinumPackage" src="images/platinum-level.png" width="30%"></i>
 <ul style="list-style-type: circle;">  
-<p><li>Lorem ipsum dolor sit amet</li></p>
-<p><li>Consectetur adipiscing elit</li></p>
-<p><li>Lorem ipsum dolor sit amet</li></p>
- <p><li>Consectetur adipiscing elit</li></p>
+<p><li id="platinumPackage">Lorem ipsum dolor sit amet</li></p>
+<p><li id="platinumPackage">Consectetur adipiscing elit</li></p>
+<p><li id="platinumPackage">Lorem ipsum dolor sit amet</li></p>
+ <p><li id="platinumPackage">Consectetur adipiscing elit</li></p>
 </ul>
   </div>
 </div>
@@ -216,7 +222,7 @@
 </div>
         </div>
  <div class="container tab" style="padding: 0px;">  
-  <form id="contact" action="" method="post">
+  <form class="contact" id="formsubmission" action="form_process.php" method="post">
     <h3>Summary</h3>
     <fieldset>
       <input id="name1" placeholder="Your name" type="text" name="name" >
@@ -227,41 +233,16 @@
     </fieldset>
     <fieldset>
       <input id="phone1" placeholder="Your Phone Number" type="text" name="phone">
-             <label class="container3" style="text-align: left">Silver
-      <input type="radio" value="silver" name="package">
-                 <span class="checkmark"></span>
-                 </label>
-             <label class="container3" style="text-align: left">Gold
-             <input type="radio" value="gold" name="package">
-                  <span class="checkmark"></span>
-             </label>
-             <label class="container3" style="text-align: left">Platinum
-             <input type="radio" value="platinum" name="package">
-                  <span class="checkmark"></span>
-        </label>
+             
     </fieldset>
-        <fieldset>
-        <label for="category">Category</label>
-    <select id="category" name="category">
-     <option value="select">Select your category</option>
-      <option value="entertainment" multiple>Entertainment/Media</option>
-      <option value="creative">Creative</option>
-      <option value="business">Business</option>
-      <option value="wedding">Wedding</option>
-<option value="education">Education</option>
-<option value="nonprofit">Nonprofit</option>
-<option value="estate">Real Estate</option>
-<option value="mobile">Mobile</option>
-<option value="corporate">Corporate</option>
-<option value="retail">Retail</option>
-    </select>      
-    </fieldset>  
+      <fieldset>
+      <input id="package" placeholder="Your selected package" type="text" name="package">
+             
+    </fieldset>
+       
       <fieldset>
           <label for="template">Choosen Template</label>
-      <input id="template" type="text" name="template">
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          <img src="images/infinite.png" width="100%;" height="100%" >
     </fieldset>
  
   </form>
@@ -307,7 +288,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.getElementById("formsubmission").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -414,7 +395,98 @@ function showSlides(n) {
       }
     
 </script>
-  
+  <script>
+// When the user clicks on div, open the popup
+function silver() {
+     document.getElementById("silverPopup").classList.toggle("show");
+   
+}
+      function gold() {
+          
+          document.getElementById("goldPopup").classList.toggle("show");
+      }
+       function platinum() {
+          document.getElementById("platinumPopup").classList.toggle("show");
+      }
+      
+  var y,ny=0,rotYINT;
+function rotateYDIV()
+{
+    
+y=document.getElementById("silverPackage");
+clearInterval(rotYINT);
+rotYINT=setInterval("startYRotate()",10);
+}
+
+function startYRotate()
+{
+ny=ny+1;
+y.style.transform="rotateY(" + ny + "deg)";
+y.style.webkitTransform="rotateY(" + ny + "deg)";
+y.style.OTransform="rotateY(" + ny + "deg)";
+y.style.MozTransform="rotateY(" + ny + "deg)";
+if (ny==180 || ny>=360)
+{
+clearInterval(rotYINT);
+if (ny>=360){ny=0}
+}
+}
+      function grotateYDIV()
+{
+    
+y=document.getElementById("goldPackage");
+clearInterval(rotYINT);
+rotYINT=setInterval("startYRotate()",10);
+}
+
+function startYRotate()
+{
+ny=ny+2;
+y.style.transform="rotateY(" + ny + "deg)";
+y.style.webkitTransform="rotateY(" + ny + "deg)";
+y.style.OTransform="rotateY(" + ny + "deg)";
+y.style.MozTransform="rotateY(" + ny + "deg)";
+if (ny==180 || ny>=360)
+{
+clearInterval(rotYINT);
+if (ny>=360){ny=0}
+}
+}
+      function protateYDIV()
+{
+    
+y=document.getElementById("platinumPackage");
+clearInterval(rotYINT);
+rotYINT=setInterval("startYRotate()",10);
+}
+
+function startYRotate()
+{
+ny=ny+1;
+y.style.transform="rotateY(" + ny + "deg)";
+y.style.webkitTransform="rotateY(" + ny + "deg)";
+y.style.OTransform="rotateY(" + ny + "deg)";
+y.style.MozTransform="rotateY(" + ny + "deg)";
+if (ny==180 || ny>=360)
+{
+clearInterval(rotYINT);
+if (ny>=360){ny=0}
+}
+}
+    
+</script>
+    <script>
+ document.onclick = function(event) {
+    event = event || window.event; // IE specials
+    var target = event.target || event.srcElement; // IE specials
+
+    if(target.nodeName === "DIV" || target.nodeName === "LI" || target.nodeName === "IMG") {
+        document.getElementById("package").value=target.id;
+       
+    }
+};
+    </script>
+   
    <script src="js/jquery-3.3.1(uncomDev).js"></script>
     <script>    
     $('#category').on('change', function() {
@@ -432,9 +504,10 @@ function showSlides(n) {
         <script>
       $(document).ready(function(){
     $("img").click(function(){
-        $(this).hide();
+        $(this).addClass();
     });
 });
 </script>
+    
 </body>
 </html>
